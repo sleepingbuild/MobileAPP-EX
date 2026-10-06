@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
             String name = edtUserName.getText().toString().trim();
             String mssv = editMSSV.getText().toString().trim();
 
+            String mssvPattern = "^B[A-Z]{2}2[2-6][0-9]{4}$";
+
             if (name.isEmpty() && mssv.isEmpty()) {
                 showWarningDialog("Vui lòng nhập cả Họ tên và MSSV!");
                 edtUserName.requestFocus();
@@ -34,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
             } else if (mssv.isEmpty()) {
                 showWarningDialog("Vui lòng nhập Mã số sinh viên (MSSV)!");
                 editMSSV.requestFocus();
+            } else if (!mssv.matches(mssvPattern)) {
+                showWarningDialog("MSSV không đúng định dạng!\n\nQuy tắc: B + 2 chữ hoa + 22..26 + 4 số\nVí dụ đúng: BIT240177");
+                editMSSV.requestFocus();
             } else {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("EXTRA_NAME", name);
@@ -42,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void showWarningDialog(String message) {
         new AlertDialog.Builder(this)
