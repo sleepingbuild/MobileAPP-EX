@@ -1,4 +1,4 @@
-package com.example.studentmanager.ui   // giữ đúng package của bạn
+package com.example.studentmanager.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -19,6 +19,8 @@ import com.example.studentmanager.data.Student
 import com.example.studentmanager.databinding.ActivityEditStudentBinding
 import kotlinx.coroutines.launch
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import androidx.activity.result.PickVisualMediaRequest
+import java.io.File
 
 class EditStudentActivity : AppCompatActivity() {
 
@@ -34,14 +36,14 @@ class EditStudentActivity : AppCompatActivity() {
 
     // Chọn ảnh từ thiết bị
     private val pickImage =
-        registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri: Uri? ->
+        registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri: Uri? ->
             if (uri != null) {
-                contentResolver.takePersistableUriPermission(
-                    uri, Intent.FLAG_GRANT_READ_URI_PERMISSION
-                )
-                pickedUri = uri.toString()
-                binding.etAvatarUrl.setText("")   // ưu tiên ảnh vừa chọn
-                showAvatar(pickedUri)
+                val savedPath = copyImageToInternalStorage(uri)
+                if (savedPath != null) {
+                    pickedUri = savedPath
+                    binding.etAvatarUrl.setText("")   // ưu tiên ảnh vừa chọn
+                    showAvatar(savedPath)
+                }
             }
         }
 
@@ -63,7 +65,11 @@ class EditStudentActivity : AppCompatActivity() {
         )
         binding.toolbar.setNavigationOnClickListener { finish() }
 
-        binding.btnPickImage.setOnClickListener { pickImage.launch(arrayOf("image/*")) }
+        binding.btnPickImage.setOnClickListener {
+            pickImage.launch(
+                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+            )
+        }
         binding.etAvatarUrl.doAfterTextChanged {
             val url = it.toString().trim()
             if (url.isNotEmpty()) showAvatar(url)
@@ -95,10 +101,48 @@ class EditStudentActivity : AppCompatActivity() {
             fallback(R.drawable.ic_person)
         }
     }
+    private fun copyImageToInternalStorage(uri: Uri): String? {
+        return try {
+            val file = File(filesDir, "avatar_${System.currentTimeMillis()}.jpg")
+            contentResolver.openInputStream(uri)?.use { input ->
+                file.outputStream().use { output -> input.copyTo(output) }
+            }
+            Uri.fromFile(file).toString()
+        } catch (e: Exception) {
+            null
+        }
+    }
+    private val codeRegex = Regex("^B[A-Z]{2}2[2-6][0-9]{4}$")
 
-    private fun onSaveClicked() {
+    private fun validateInputs(): Boolean {
         val name = binding.etName.text.toString().trim()
-        val code = binding.etCode.text.toString().trim()
+        val code = binding.etCode.text.toString().trim().uppercase()
+        val email = binding.etEmail.text.toString().trim()
+
+        binding.tilName.error =
+            if (name.isEmpty()) getString(R.string.error_name_required) else null
+
+        binding.tilCode.error = when {
+            code.isEmpty() -> getString(R.string.error_code_required)
+            !codeRegex.matches(code) -> getString(R.string.error_code_invalid)
+            else -> null
+        }
+
+        binding.tilEmail.error = when {
+            email.isEmpty() -> getString(R.string.error_email_required)
+            !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> getString(R.string.error_email_invalid)
+            else -> null
+        }
+
+        return binding.tilName.error == null &&
+                binding.tilCode.error == null &&
+                binding.tilEmail.error == null
+    }
+    private fun onSaveClicked() {
+        if (!validateInputs()) return
+
+        val name = binding.etName.text.toString().trim()
+        val code = binding.etCode.text.toString().trim().uppercase()
         val email = binding.etEmail.text.toString().trim()
         val url = binding.etAvatarUrl.text.toString().trim()
 
