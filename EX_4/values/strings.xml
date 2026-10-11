@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Quản lý sinh viên</string>
+
+    <string name="student_list">Danh sách sinh viên</string>
+    <string name="empty_list">Chưa có sinh viên nào</string>
+    <string name="add_student">Thêm sinh viên</string>
+
+    <string name="student_name">Họ tên</string>
+    <string name="student_code">Mã số SV</string>
+    <string name="student_email">Email</string>
+    <string name="student_avatar">Ảnh đại diện</string>
+    <string name="avatar_url_hint">Link ảnh (không bắt buộc)</string>
+    <string name="pick_image">Chọn ảnh từ thiết bị</string>
+
+    <string name="student_detail">Thông tin sinh viên</string>
+    <string name="add_new_student">Thêm sinh viên mới</string>
+    <string name="edit_student">Sửa thông tin sinh viên</string>
+
+    <string name="save">Lưu</string>
+    <string name="edit">Sửa</string>
+    <string name="delete">Xóa</string>
+    <string name="close">Đóng</string>
+    <string name="yes">Có</string>
+    <string name="no">Không</string>
+
+    <string name="confirm_title">Xác nhận</string>
+    <string name="confirm_edit_message">Bạn có muốn sửa thông tin SV không?</string>
+    <string name="confirm_delete_message">Bạn có muốn xóa thông tin SV không?</string>
+
+    <string name="msg_saved">Đã lưu</string>
+    <string name="msg_deleted">Đã xóa</string>
+    <string name="msg_required">Vui lòng nhập đủ thông tin bắt buộc</string>
+    <string name="msg_invalid_email">Email không hợp lệ</string>
+
+    <string name="error_name_required">Vui lòng nhập họ tên</string>
+    <string name="error_code_required">Vui lòng nhập mã số SV</string>
+    <string name="error_code_invalid">Mã số SV không hợp lệ. Định dạng: B + 2 chữ cái (A–Z) + 2 số (22-26) + 4 số. Ví dụ: BCN250123</string>
+    <string name="error_email_required">Vui lòng nhập email</string>
+    <string name="error_email_invalid">Email không hợp lệ</string>
+</resources>
