@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Student Manager</string>
+
+    <!-- Màn hình danh sách -->
+    <string name="student_list">Student List</string>
+    <string name="empty_list">No students yet</string>
+    <string name="add_student">Add student</string>
+
+    <!-- Thông tin sinh viên -->
+    <string name="student_name">Full name</string>
+    <string name="student_code">Student ID</string>
+    <string name="student_email">Email</string>
+    <string name="student_avatar">Avatar</string>
+    <string name="avatar_url_hint">Image link (optional)</string>
+    <string name="pick_image">Pick from device</string>
+
+    <!-- Màn hình chi tiết / sửa -->
+    <string name="student_detail">Student details</string>
+    <string name="add_new_student">Add new student</string>
+    <string name="edit_student">Edit student</string>
+
+    <!-- Nút bấm -->
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="close">Close</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Hộp thoại xác nhận -->
+    <string name="confirm_title">Confirm</string>
+    <string name="confirm_edit_message">Do you want to edit this student\'s information?</string>
+    <string name="confirm_delete_message">Do you want to delete this student\'s information?</string>
+
+    <!-- Thông báo -->
+    <string name="msg_saved">Saved</string>
+    <string name="msg_deleted">Deleted</string>
+    <string name="msg_required">Please fill in all required fields</string>
+    <string name="msg_invalid_email">Invalid email</string>
+
+    <string name="error_name_required">Please enter the full name</string>
+    <string name="error_code_required">Please enter the student ID</string>
+    <string name="error_code_invalid">Invalid ID. Format: B + 2 letters (A-Z) + 2 digits (22-26) + 4 digits. Example: BCN250123</string>
+    <string name="error_email_required">Please enter the email</string>
+    <string name="error_email_invalid">Invalid email</string>
+</resources>
