@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="12dp">
+
+            <EditText android:id="@+id/etTitle" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Tên khóa học" />
+            <EditText android:id="@+id/etDesc" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Mô tả" android:inputType="textMultiLine" android:minLines="2" />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Danh mục (bắt buộc)" android:textStyle="bold" android:paddingTop="12dp" />
+            <TextView android:id="@+id/tvCategoryBox" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:minHeight="48dp" android:gravity="center_vertical" android:padding="12dp"
+                android:layout_marginTop="4dp" android:textSize="16sp"
+                android:background="@drawable/bg_border" android:clickable="true" android:focusable="true"
+                android:text="Chọn danh mục"
+                android:drawableEnd="@android:drawable/arrow_down_float" />
+            <TextView android:id="@+id/tvCatHint" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Chưa có danh mục nào. Hãy thêm ở màn Quản lý danh mục." android:textColor="#D32F2F" android:visibility="gone" />
+
+            <EditText android:id="@+id/etInstructor" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Giảng viên" />
+            <EditText android:id="@+id/etPrice" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Học phí (VNĐ)" android:inputType="numberSigned"/>
+            <EditText android:id="@+id/etDuration" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Thời lượng (giờ)" android:inputType="number" />
+            <EditText android:id="@+id/etThumb" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="URL ảnh bìa" android:inputType="textUri" />
+            <ImageView android:id="@+id/imgPreview" android:layout_width="match_parent" android:layout_height="160dp"
+                android:scaleType="centerCrop" android:src="@android:drawable/ic_menu_gallery" />
+            <EditText android:id="@+id/etTrailer" android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="URL video trailer (MP4)" android:inputType="textUri" />
+            <Button android:id="@+id/btnSave" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Lưu" />
+        </LinearLayout>
+    </ScrollView>
+    <ProgressBar android:id="@+id/progress" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="center" android:visibility="gone" />
+</FrameLayout>
