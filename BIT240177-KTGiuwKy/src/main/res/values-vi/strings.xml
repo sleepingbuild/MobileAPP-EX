@@ -1,0 +1,70 @@
+<resources>
+    <string name="search_hint">Tìm theo tên món</string>
+    <string name="all_categories">Tất cả loại món</string>
+    <string name="available_only">Chỉ món đang bán</string>
+    <string name="min_price">Giá từ</string>
+    <string name="max_price">Giá đến</string>
+    <string name="empty_list">Không có món ăn nào</string>
+    <string name="error_price_range">Giá tối thiểu không được lớn hơn giá tối đa</string>
+    <string name="quick">Nhanh</string>
+    <string name="regular">Thông thường</string>
+    <string name="unavailable">Ngừng bán</string>
+    <string name="minutes_format">%d phút</string>
+    <string name="price_format">%s đ</string>
+    <string name="switch_language">English</string>
+    <string name="coming_soon">Sẽ làm ở bước tiếp theo</string>
+
+    <string-array name="sort_options">
+        <item>Sắp xếp: mặc định</item>
+        <item>Giá: thấp đến cao</item>
+        <item>Giá: cao đến thấp</item>
+        <item>Thời gian chế biến: ngắn đến dài</item>
+        <item>Thời gian chế biến: dài đến ngắn</item>
+    </string-array>
+
+    <string name="back">← Quay lại</string>
+    <string name="add_dish">Thêm món</string>
+    <string name="edit_dish">Sửa món</string>
+    <string name="dish_detail">Chi tiết món</string>
+    <string name="name">Tên món</string>
+    <string name="price">Giá (VND)</string>
+    <string name="prep_time">Thời gian chế biến (phút)</string>
+    <string name="description">Mô tả</string>
+    <string name="category">Loại món</string>
+    <string name="available">Đang bán</string>
+    <string name="image_url">Đường dẫn ảnh</string>
+    <string name="image_url_optional">Đường dẫn ảnh (không bắt buộc)</string>
+    <string name="save">Lưu</string>
+    <string name="cancel">Hủy</string>
+    <string name="edit">Sửa</string>
+    <string name="delete">Xóa</string>
+    <string name="add_image">Thêm ảnh</string>
+    <string name="thumbnail">Ảnh đại diện</string>
+    <string name="set_thumbnail">Đặt làm ảnh đại diện</string>
+    <string name="delete_image">Xóa ảnh</string>
+    <string name="no_images">Chưa có ảnh</string>
+    <string name="confirm_delete_title">Xóa món ăn</string>
+    <string name="confirm_delete_message">Xóa món \"%s\"? Thao tác này không thể hoàn tác.</string>
+    <string name="error_name_required">Tên món không được để trống</string>
+    <string name="error_price_invalid">Giá phải lớn hơn 0</string>
+    <string name="error_prep_invalid">Thời gian chế biến phải lớn hơn 0</string>
+    <string name="error_category_required">Vui lòng chọn loại món hợp lệ</string>
+    <string name="error_duplicate_name">Loại món này đã có món trùng tên</string>
+    <string name="error_url_invalid">Nhập đường dẫn ảnh hợp lệ (http hoặc https)</string>
+    <string name="dish_not_found">Không tìm thấy món ăn</string>
+    <string name="saved">Đã lưu</string>
+    <string name="deleted">Đã xóa</string>
+    <string name="categories">Loại món</string>
+    <string name="add_category">Thêm loại món</string>
+    <string name="edit_category">Sửa loại món</string>
+    <string name="category_name">Tên loại món</string>
+    <string name="error_category_name_required">Tên loại món không được để trống</string>
+    <string name="error_category_duplicate">Đã có loại món trùng tên</string>
+    <string name="error_category_in_use">Không thể xóa: loại món này còn %d món ăn</string>
+    <string name="confirm_delete_category_title">Xóa loại món</string>
+    <string name="confirm_delete_category_message">Xóa loại món \"%s\"?</string>
+
+    <string name="sync_online_synced">Có mạng - đã đồng bộ toàn bộ</string>
+    <string name="sync_online_pending">Có mạng - đang đồng bộ (còn %d thay đổi)</string>
+    <string name="sync_offline">Mất mạng - %d thay đổi đã lưu trên máy</string>
+</resources>
